@@ -4,7 +4,7 @@ from numpy.testing import assert_almost_equal
 from linear_regression import least_squares
 
 
-@pytest.mark.parametrize("n", [2, 10, 20])
+@pytest.mark.parametrize("n", [3, 10, 20])
 def test_dimensions(n):
     X = np.random.randn(n, 3)
     y = np.random.randn(n)
@@ -33,3 +33,12 @@ def test_recovery():
     y = np.dot(X, true_coefs)
     predicted_coefs = least_squares(X, y)
     assert_almost_equal(true_coefs, predicted_coefs)
+
+
+def test_regul():
+    X = np.random.randn(3, 2)
+    true_coefs = np.random.randn(2)
+    y = np.dot(X, true_coefs)
+    coefs = least_squares(X, y, regul=1.)
+    gradient = np.dot(X.T, np.dot(X, coefs) - y) + 1. * coefs
+    assert_almost_equal(gradient, 0)
