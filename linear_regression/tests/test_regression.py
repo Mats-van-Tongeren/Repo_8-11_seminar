@@ -33,3 +33,11 @@ def test_recovery():
     y = np.dot(X, true_coefs)
     predicted_coefs = least_squares(X, y)
     assert_almost_equal(true_coefs, predicted_coefs)
+
+
+def test_regul():
+    X = np.random.randn(3, 2)
+    true_coefs = np.random.randn(2)
+    y = np.dot(X, true_coefs)
+    predicted_coefs = least_squares(X, y, regul=1.)
+    assert_almost_equal(true_coefs, predicted_coefs)

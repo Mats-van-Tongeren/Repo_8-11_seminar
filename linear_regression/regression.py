@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def least_squares(X, y):
+def least_squares(X, y, regul=0.):
     """
     Perform least squares regression.
     Finds coefficients w such that Xw ~= y
@@ -12,6 +12,8 @@ def least_squares(X, y):
         The input data
     y : np.array, shape (n_samples)
         The input targets
+    regul : float
+        Amount of l2 regularization
 
     Returns
     -------
@@ -20,7 +22,7 @@ def least_squares(X, y):
     """
     n, p = X.shape
     response = np.dot(X.T, y)  # Build response
-    return np.linalg.solve(np.dot(X.T, X), response)
+    return np.linalg.solve(np.dot(X.T, X) + regul * np.eye(p), response)
 
 
 if __name__ == '__main__':
