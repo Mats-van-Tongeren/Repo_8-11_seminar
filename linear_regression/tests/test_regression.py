@@ -41,4 +41,3 @@ def test_regul():
     y = np.dot(X, true_coefs)
     predicted_coefs = least_squares(X, y, regul=1.)
     assert_almost_equal(true_coefs, predicted_coefs)
-    
