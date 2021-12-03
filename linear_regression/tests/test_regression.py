@@ -4,7 +4,7 @@ from numpy.testing import assert_almost_equal
 from linear_regression import least_squares
 
 
-@pytest.mark.parametrize("n", [2, 10, 20])
+@pytest.mark.parametrize("n", [3, 10, 20])
 def test_dimensions(n):
     X = np.random.randn(n, 3)
     y = np.random.randn(n)
