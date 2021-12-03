@@ -111,7 +111,7 @@
 <h1>linear_regression.least_squares<a class="headerlink" href="#linear-regression-least-squares" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="linear_regression.least_squares">
-<code class="sig-prename descclassname">linear_regression.</code><code class="sig-name descname">least_squares</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#linear_regression.least_squares" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">linear_regression.</code><code class="sig-name descname">least_squares</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">regul=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#linear_regression.least_squares" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform least squares regression.
 Finds coefficients w such that Xw ~= y</p>
 <dl class="field-list simple">
@@ -120,6 +120,8 @@ Finds coefficients w such that Xw ~= y</p>
 <dt><strong>X</strong><span class="classifier">np.array, shape (n_samples, n_features)</span></dt><dd><p>The input data</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">np.array, shape (n_samples)</span></dt><dd><p>The input targets</p>
+</dd>
+<dt><strong>regul</strong><span class="classifier">float</span></dt><dd><p>Amount of l2 regularization</p>
 </dd>
 </dl>
 </dd>
